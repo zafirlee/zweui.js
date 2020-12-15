@@ -242,3 +242,36 @@ weui.datePicker({
      id: 'datePicker'
  });
 ```
+
+## distPicker(options)
+distPicker 地域选择器。
+
+**Kind**: global function  
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| options | <code>Object</code> |  | 配置项 |
+| [options.id] | <code>string</code> | <code>&quot;default&quot;</code> | 作为picker的唯一标识，作用是以id缓存当时的选择。（当你想每次传入的defaultValue都是不一样时，可以使用不同的id区分） |
+| [options.className] | <code>string</code> |  | 自定义类名 |
+| [options.title] | <code>string</code> |  | 自定义标题 |
+| [options.desc] | <code>string</code> |  | 自定义描述 |
+| [options.container] | <code>string</code> |  | 指定容器 |
+| [options.defaultValue] | <code>array</code> |  | 默认选项的value数组 |
+| [options.onChange] | <code>function</code> |  | 在picker选中的值发生变化的时候回调 |
+| [options.onConfirm] | <code>function</code> |  | 在点击"确定"之后的回调。回调返回选中的结果(Array)，数组长度依赖于picker的层级。 |
+| [options.onClose] | <code>function</code> |  | picker关闭后的回调 |
+
+**Example**  
+weui.distPicker({
+        defaultValue: [110000, 110100, 110101],
+        onChange: function (result) {
+            console.log(result);
+        },
+        onConfirm: function (result) {
+            console.log(result);
+        },
+        id: 'distPicker',
+        className: "disPicker",
+        desc: "省市区三级联动",
+        title: '地区选择器'
+    });
