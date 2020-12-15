@@ -15,7 +15,7 @@ zweui.js
 
 ### 手机预览
 
-![https://zafir.cn/zweui.js/](https://cloud.githubusercontent.com/assets/2395166/20742697/96705822-b70c-11e6-9486-c03a5939a1d6.png)
+![https://zafir.cn/zweui.js/](https://zafir.cn/zweui.js/qr.png)
 
 [https://zafir.cn/zweui.js/](https://zafir.cn/zweui.js/)
 
