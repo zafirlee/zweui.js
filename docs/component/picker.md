@@ -262,6 +262,7 @@ distPicker 地域选择器。
 | [options.onClose] | <code>function</code> |  | picker关闭后的回调 |
 
 **Example**  
+```js
 weui.distPicker({
         defaultValue: [110000, 110100, 110101],
         onChange: function (result) {
