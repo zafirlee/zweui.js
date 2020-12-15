@@ -244,7 +244,7 @@ weui.datePicker({
 ```
 
 ## distPicker(options)
-distPicker 地域选择器。
+distPicker 地域选择器,由picker拓展而来，提供省、市、区的选择。。
 
 **Kind**: global function  
 
