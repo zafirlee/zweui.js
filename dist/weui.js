@@ -844,7 +844,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 6 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"<%=className%>\"> <div class=weui-mask></div> <div class=\"weui-dialog <% if(isAndroid){ %> weui-skin_android <% } %>\"> <% if(title){ %> <div class=weui-dialog__hd><strong class=weui-dialog__title><%=title%></strong></div> <% } %> <div class=weui-dialog__bd><%=content%></div> <div class=weui-dialog__ft> <% for(var i = 0; i < buttons.length; i++){ %> <a href=javascript:; class=\"weui-dialog__btn weui-dialog__btn_<%=buttons[i]['type']%>\"><%=buttons[i]['label']%></a> <% } %> </div> </div> </div> ";
+	module.exports = "<div class=\"<%=className%>\"> <div class=weui-mask></div> <div class=\"weui-dialog <% if(isAndroid){ %> weui-skin_android <% } %>\"> <% if(title){ %> <div class=weui-dialog__hd><strong class=weui-dialog__title><%=title%></strong></div> <% } %> <div class=weui-dialog__bd><%=content%></div> <div class=weui-dialog__ft> <% for(var i = 0; i < buttons.length; i++){ %> <a href=javascript: class=\"weui-dialog__btn weui-dialog__btn_<%=buttons[i]['type']%>\"><%=buttons[i]['label']%></a> <% } %> </div> </div> </div> ";
 
 /***/ }),
 /* 7 */
@@ -8336,7 +8336,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 29 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"<%= className %>\"> <div class=weui-mask></div> <div class=\"weui-half-screen-dialog weui-picker\"> <div class=weui-half-screen-dialog__hd> <div class=weui-half-screen-dialog__hd__side> <button class=\"weui-icon-btn weui-icon-btn_close weui-picker__btn\">关闭</button> </div> <div class=weui-half-screen-dialog__hd__main> <strong class=weui-half-screen-dialog__title><%= title %></strong> <span class=weui-half-screen-dialog__subtitle><%= desc %></span> </div> </div> <div class=weui-half-screen-dialog__bd> <div class=weui-picker__bd></div> </div> <div class=weui-half-screen-dialog__ft> <a href=javascript:; class=\"weui-btn weui-btn_primary weui-picker__btn\" id=weui-picker-confirm data-action=select>确定</a> </div> </div> </div> ";
+	module.exports = "<div class=\"<%= className %>\"> <div class=weui-mask></div> <div class=\"weui-half-screen-dialog weui-picker\"> <div class=weui-half-screen-dialog__hd> <div class=weui-half-screen-dialog__hd__side> <button class=\"weui-icon-btn weui-icon-btn_close weui-picker__btn\">关闭</button> </div> <div class=weui-half-screen-dialog__hd__main> <strong class=weui-half-screen-dialog__title><%= title %></strong> <span class=weui-half-screen-dialog__subtitle><%= desc %></span> </div> </div> <div class=weui-half-screen-dialog__bd> <div class=weui-picker__bd></div> </div> <div class=weui-half-screen-dialog__ft> <a href=javascript: class=\"weui-btn weui-btn_primary weui-picker__btn\" id=weui-picker-confirm data-action=select>确定</a> </div> </div> </div> ";
 
 /***/ }),
 /* 30 */

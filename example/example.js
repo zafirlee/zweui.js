@@ -7,7 +7,7 @@ FastClick.attach(document.body);
 /* dialog */
 document.querySelector('#alertBtn').addEventListener('click', function () {
     weui.alert('自定义标题的alert', function () {
-        console.log('ok')
+        console.log('ok');
     }, {
         title: '自定义标题'
     });
@@ -17,9 +17,9 @@ document.querySelector('#alertBtn').addEventListener('click', function () {
 /* confirm */
 document.querySelector('#confirmBtn').addEventListener('click', function () {
     weui.confirm('自定义标题的confirm', function () {
-        console.log('yes')
+        console.log('yes');
     }, function () {
-        console.log('no')
+        console.log('no');
     }, {
         title: '自定义标题'
     });
@@ -30,7 +30,7 @@ document.querySelector('#confirmBtn').addEventListener('click', function () {
 document.querySelector('#toastBtn').addEventListener('click', function () {
     weui.toast('操作成功', {
         duration: 3000,
-        className: "bears"
+        className: 'bears'
     });
 });
 
@@ -72,8 +72,8 @@ document.querySelector('#actionSheetBtn').addEventListener('click', function () 
         }
     ], {
         title: 'actionTitle',
-        className: "custom-classname",
-        onClose: function(){
+        className: 'custom-classname',
+        onClose: function () {
             console.log('关闭');
         }
     });
@@ -84,7 +84,7 @@ document.querySelector('#actionSheetBtn').addEventListener('click', function () 
 document.querySelector('#topTipsBtn').addEventListener('click', function () {
     weui.topTips('请填写正确的字段', {
         duration: 3000,
-        className: "custom-classname",
+        className: 'custom-classname',
         callback: function () {
             console.log('close');
         }
@@ -208,7 +208,7 @@ document.querySelector('#multiPickerBtn').addEventListener('click', function () 
             console.log(result);
         },
         id: 'multiPickerBtn',
-        onClose: function(){
+        onClose: function () {
             console.log('onClose');
         },
         title: '多列选择器'
@@ -305,8 +305,8 @@ document.querySelector('#distPickerBtn').addEventListener('click', function () {
             console.log(result);
         },
         id: 'distPicker',
-        className: "disPicker",
-        desc: "省市区三级联动",
+        className: 'distPicker',
+        desc: '省市区三级联动',
         title: '地区选择器'
     });
 });
@@ -323,7 +323,7 @@ function setSlider() {
     isSetSlider = true;
 
     // 普通slider
-    var sliderValue = document.getElementById("sliderValue");
+    var sliderValue = document.getElementById('sliderValue');
     weui.slider('#slider', {
         defaultValue: 50,
         onChange: function (percent) {
@@ -333,22 +333,22 @@ function setSlider() {
     });
 
     // 带step的slider
-    var sliderStepValue = document.getElementById("sliderStepValue");
+    var sliderStepValue = document.getElementById('sliderStepValue');
     weui.slider('#sliderStep', {
         step: 10,
         defaultValue: 40,
-        onChange: function(percent){
+        onChange: function (percent) {
             sliderStepValue.innerHTML = Math.round(percent);
             console.log(percent);
         }
     });
 
     // 分块的slider
-    var sliderBlockValue = document.getElementById("sliderBlockValue");
+    var sliderBlockValue = document.getElementById('sliderBlockValue');
     weui.slider('#sliderBlock', {
         step: 100 / 3,
         defaultValue: 33.333,
-        onChange: function(percent){
+        onChange: function (percent) {
             sliderBlockValue.innerHTML = Math.round(percent);
             console.log(percent);
         }
@@ -357,12 +357,12 @@ function setSlider() {
 
 
 /* tab */
-weui.tab('#tab',{
+weui.tab('#tab', {
     defaultIndex: 0,
-    onChange: function(index){
+    onChange: function (index) {
         console.log(index);
 
-        if(index == 3){
+        if (index == 3) {
             setSlider(); // 设置slider
         }
     }
@@ -398,7 +398,7 @@ document.querySelector('#formSubmitBtn').addEventListener('click', function () {
 
 /* 图片自动上传 */
 var uploadCount = 0, uploadList = [];
-var uploadCountDom = document.getElementById("uploadCount");
+var uploadCountDom = document.getElementById('uploadCount');
 weui.uploader('#uploader', {
     url: 'http://' + location.hostname + ':8002/upload',
     auto: true,
@@ -409,12 +409,12 @@ weui.uploader('#uploader', {
         height: 1600,
         quality: .8
     },
-    onBeforeQueued: function(files) {
-        if(["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0){
+    onBeforeQueued: function (files) {
+        if (['image/jpg', 'image/jpeg', 'image/png', 'image/gif'].indexOf(this.type) < 0) {
             weui.alert('请上传图片');
             return false;
         }
-        if(this.size > 10 * 1024 * 1024){
+        if (this.size > 10 * 1024 * 1024) {
             weui.alert('请上传不超过10M的图片');
             return false;
         }
@@ -430,54 +430,54 @@ weui.uploader('#uploader', {
         ++uploadCount;
         uploadCountDom.innerHTML = uploadCount;
     },
-    onQueued: function(){
+    onQueued: function () {
         uploadList.push(this);
         console.log(this);
     },
-    onBeforeSend: function(data, headers){
+    onBeforeSend: function (data, headers) {
         console.log(this, data, headers);
         // $.extend(data, { test: 1 }); // 可以扩展此对象来控制上传参数
         // $.extend(headers, { Origin: 'http://127.0.0.1' }); // 可以扩展此对象来控制上传头部
 
         // return false; // 阻止文件上传
     },
-    onProgress: function(procent){
+    onProgress: function (procent) {
         console.log(this, procent);
     },
     onSuccess: function (ret) {
         console.log(this, ret);
     },
-    onError: function(err){
+    onError: function (err) {
         console.log(this, err);
     }
 });
 
 // 缩略图预览
-document.querySelector('#uploaderFiles').addEventListener('click', function(e){
+document.querySelector('#uploaderFiles').addEventListener('click', function (e) {
     var target = e.target;
 
-    while(!target.classList.contains('weui-uploader__file') && target){
+    while (!target.classList.contains('weui-uploader__file') && target) {
         target = target.parentNode;
     }
-    if(!target) return;
+    if (!target) return;
 
     var url = target.getAttribute('style') || '';
     var id = target.getAttribute('data-id');
 
-    if(url){
+    if (url) {
         url = url.match(/url\((.*?)\)/)[1].replace(/"/g, '');
     }
     var gallery = weui.gallery(url, {
         className: 'custom-name',
-        onDelete: function(){
-            weui.confirm('确定删除该图片？', function(){
+        onDelete: function () {
+            weui.confirm('确定删除该图片？', function () {
                 --uploadCount;
                 uploadCountDom.innerHTML = uploadCount;
 
 
                 for (var i = 0, len = uploadList.length; i < len; ++i) {
                     var file = uploadList[i];
-                    if(file.id == id){
+                    if (file.id == id) {
                         file.stop();
                         break;
                     }
@@ -497,45 +497,45 @@ var uploadCustomFileList = [];
 weui.uploader('#uploaderCustom', {
     url: 'http://localhost:8002/upload',
     auto: false,
-    onQueued: function() {
+    onQueued: function () {
         uploadCustomFileList.push(this);
     }
 });
 
 // 手动上传按钮
-document.getElementById("uploaderCustomBtn").addEventListener('click', function(){
-    uploadCustomFileList.forEach(function(file){
+document.getElementById('uploaderCustomBtn').addEventListener('click', function () {
+    uploadCustomFileList.forEach(function (file) {
         file.upload();
     });
 });
 
 // 缩略图预览
-document.querySelector('#uploaderCustomFiles').addEventListener('click', function(e){
+document.querySelector('#uploaderCustomFiles').addEventListener('click', function (e) {
     var target = e.target;
 
-    while(!target.classList.contains('weui-uploader__file') && target){
+    while (!target.classList.contains('weui-uploader__file') && target) {
         target = target.parentNode;
     }
-    if(!target) return;
+    if (!target) return;
 
     var url = target.getAttribute('style') || '';
     var id = target.getAttribute('data-id');
 
-    if(url){
+    if (url) {
         url = url.match(/url\((.*?)\)/)[1].replace(/"/g, '');
     }
     var gallery = weui.gallery(url, {
-        onDelete: function(){
-            weui.confirm('确定删除该图片？', function(){
+        onDelete: function () {
+            weui.confirm('确定删除该图片？', function () {
                 var index;
                 for (var i = 0, len = uploadCustomFileList.length; i < len; ++i) {
                     var file = uploadCustomFileList[i];
-                    if(file.id == id){
+                    if (file.id == id) {
                         index = i;
                         break;
                     }
                 }
-                if(index !== undefined) uploadCustomFileList.splice(index, 1);
+                if (index !== undefined) uploadCustomFileList.splice(index, 1);
 
                 target.remove();
                 gallery.hide();

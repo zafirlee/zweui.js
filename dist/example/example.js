@@ -83,7 +83,7 @@
 	document.querySelector('#toastBtn').addEventListener('click', function () {
 	    _zweui2.default.toast('操作成功', {
 	        duration: 3000,
-	        className: "bears"
+	        className: 'bears'
 	    });
 	});
 
@@ -119,7 +119,7 @@
 	        }
 	    }], {
 	        title: 'actionTitle',
-	        className: "custom-classname",
+	        className: 'custom-classname',
 	        onClose: function onClose() {
 	            console.log('关闭');
 	        }
@@ -130,7 +130,7 @@
 	document.querySelector('#topTipsBtn').addEventListener('click', function () {
 	    _zweui2.default.topTips('请填写正确的字段', {
 	        duration: 3000,
-	        className: "custom-classname",
+	        className: 'custom-classname',
 	        callback: function callback() {
 	            console.log('close');
 	        }
@@ -332,8 +332,8 @@
 	            console.log(result);
 	        },
 	        id: 'distPicker',
-	        className: "disPicker",
-	        desc: "省市区三级联动",
+	        className: 'distPicker',
+	        desc: '省市区三级联动',
 	        title: '地区选择器'
 	    });
 	});
@@ -349,7 +349,7 @@
 	    isSetSlider = true;
 
 	    // 普通slider
-	    var sliderValue = document.getElementById("sliderValue");
+	    var sliderValue = document.getElementById('sliderValue');
 	    _zweui2.default.slider('#slider', {
 	        defaultValue: 50,
 	        onChange: function onChange(percent) {
@@ -359,7 +359,7 @@
 	    });
 
 	    // 带step的slider
-	    var sliderStepValue = document.getElementById("sliderStepValue");
+	    var sliderStepValue = document.getElementById('sliderStepValue');
 	    _zweui2.default.slider('#sliderStep', {
 	        step: 10,
 	        defaultValue: 40,
@@ -370,7 +370,7 @@
 	    });
 
 	    // 分块的slider
-	    var sliderBlockValue = document.getElementById("sliderBlockValue");
+	    var sliderBlockValue = document.getElementById('sliderBlockValue');
 	    _zweui2.default.slider('#sliderBlock', {
 	        step: 100 / 3,
 	        defaultValue: 33.333,
@@ -422,7 +422,7 @@
 	/* 图片自动上传 */
 	var uploadCount = 0,
 	    uploadList = [];
-	var uploadCountDom = document.getElementById("uploadCount");
+	var uploadCountDom = document.getElementById('uploadCount');
 	_zweui2.default.uploader('#uploader', {
 	    url: 'http://' + location.hostname + ':8002/upload',
 	    auto: true,
@@ -434,7 +434,7 @@
 	        quality: .8
 	    },
 	    onBeforeQueued: function onBeforeQueued(files) {
-	        if (["image/jpg", "image/jpeg", "image/png", "image/gif"].indexOf(this.type) < 0) {
+	        if (['image/jpg', 'image/jpeg', 'image/png', 'image/gif'].indexOf(this.type) < 0) {
 	            _zweui2.default.alert('请上传图片');
 	            return false;
 	        }
@@ -526,7 +526,7 @@
 	});
 
 	// 手动上传按钮
-	document.getElementById("uploaderCustomBtn").addEventListener('click', function () {
+	document.getElementById('uploaderCustomBtn').addEventListener('click', function () {
 	    uploadCustomFileList.forEach(function (file) {
 	        file.upload();
 	    });
@@ -2203,7 +2203,7 @@
 /* 8 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"<%=className%>\"> <div class=weui-mask></div> <div class=\"weui-dialog <% if(isAndroid){ %> weui-skin_android <% } %>\"> <% if(title){ %> <div class=weui-dialog__hd><strong class=weui-dialog__title><%=title%></strong></div> <% } %> <div class=weui-dialog__bd><%=content%></div> <div class=weui-dialog__ft> <% for(var i = 0; i < buttons.length; i++){ %> <a href=javascript:; class=\"weui-dialog__btn weui-dialog__btn_<%=buttons[i]['type']%>\"><%=buttons[i]['label']%></a> <% } %> </div> </div> </div> ";
+	module.exports = "<div class=\"<%=className%>\"> <div class=weui-mask></div> <div class=\"weui-dialog <% if(isAndroid){ %> weui-skin_android <% } %>\"> <% if(title){ %> <div class=weui-dialog__hd><strong class=weui-dialog__title><%=title%></strong></div> <% } %> <div class=weui-dialog__bd><%=content%></div> <div class=weui-dialog__ft> <% for(var i = 0; i < buttons.length; i++){ %> <a href=javascript: class=\"weui-dialog__btn weui-dialog__btn_<%=buttons[i]['type']%>\"><%=buttons[i]['label']%></a> <% } %> </div> </div> </div> ";
 
 /***/ }),
 /* 9 */
@@ -9695,7 +9695,7 @@
 /* 31 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"<%= className %>\"> <div class=weui-mask></div> <div class=\"weui-half-screen-dialog weui-picker\"> <div class=weui-half-screen-dialog__hd> <div class=weui-half-screen-dialog__hd__side> <button class=\"weui-icon-btn weui-icon-btn_close weui-picker__btn\">关闭</button> </div> <div class=weui-half-screen-dialog__hd__main> <strong class=weui-half-screen-dialog__title><%= title %></strong> <span class=weui-half-screen-dialog__subtitle><%= desc %></span> </div> </div> <div class=weui-half-screen-dialog__bd> <div class=weui-picker__bd></div> </div> <div class=weui-half-screen-dialog__ft> <a href=javascript:; class=\"weui-btn weui-btn_primary weui-picker__btn\" id=weui-picker-confirm data-action=select>确定</a> </div> </div> </div> ";
+	module.exports = "<div class=\"<%= className %>\"> <div class=weui-mask></div> <div class=\"weui-half-screen-dialog weui-picker\"> <div class=weui-half-screen-dialog__hd> <div class=weui-half-screen-dialog__hd__side> <button class=\"weui-icon-btn weui-icon-btn_close weui-picker__btn\">关闭</button> </div> <div class=weui-half-screen-dialog__hd__main> <strong class=weui-half-screen-dialog__title><%= title %></strong> <span class=weui-half-screen-dialog__subtitle><%= desc %></span> </div> </div> <div class=weui-half-screen-dialog__bd> <div class=weui-picker__bd></div> </div> <div class=weui-half-screen-dialog__ft> <a href=javascript: class=\"weui-btn weui-btn_primary weui-picker__btn\" id=weui-picker-confirm data-action=select>确定</a> </div> </div> </div> ";
 
 /***/ }),
 /* 32 */
